@@ -16,7 +16,7 @@ public class BasicEnemyProjectile : EnemyProjectile
         rb.velocity = initialDir * speed;
     }
 
-    private void OnTriggerEnter2D(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag.Equals("Player")) 
         {
