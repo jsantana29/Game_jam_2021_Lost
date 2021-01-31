@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ProjectileManager : MonoBehaviour
 {
+    public int damage;
+    public bool enemyProjectile;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,11 @@ public class ProjectileManager : MonoBehaviour
     {
         if(collision.gameObject.tag == "Walls")
         {
+            Destroy(gameObject);
+        }
+        else if(collision.gameObject.tag == "Player" && enemyProjectile)
+        {
+            collision.gameObject.GetComponent<HealthManager>().damagePlayer(damage);
             Destroy(gameObject);
         }
         
