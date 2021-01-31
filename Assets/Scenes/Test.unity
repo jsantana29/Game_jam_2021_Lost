@@ -7399,10 +7399,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1683393423}
-    - target: {fileID: 7809723197097091107, guid: 4c4c31b0cb3bc8340b62b90a7d559ebf, type: 3}
-      propertyPath: currentHealth
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 7809723197097091108, guid: 4c4c31b0cb3bc8340b62b90a7d559ebf, type: 3}
       propertyPath: cam
       value: 
@@ -7454,14 +7450,6 @@ PrefabInstance:
     - target: {fileID: 7809723197097091131, guid: 4c4c31b0cb3bc8340b62b90a7d559ebf, type: 3}
       propertyPath: m_Name
       value: Matty Ice2_8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7809723197097091131, guid: 4c4c31b0cb3bc8340b62b90a7d559ebf, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7809723198029049879, guid: 4c4c31b0cb3bc8340b62b90a7d559ebf, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c4c31b0cb3bc8340b62b90a7d559ebf, type: 3}

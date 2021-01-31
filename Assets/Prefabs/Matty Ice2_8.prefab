@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 7809723197097091107}
   - component: {fileID: 7809723197097091116}
   - component: {fileID: 855816279}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Matty Ice2_8
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ffca38e893c7b4fb23cad460673555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 3
+  currentHealth: 30
 --- !u!114 &7809723197097091116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,7 +429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7809723198029049872}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: firePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
