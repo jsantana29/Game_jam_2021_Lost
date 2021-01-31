@@ -46,9 +46,17 @@ public class RotatingTurret : MonoBehaviour
 
     private void FindPlayer()
     {
-        player = Physics2D.OverlapCircle(areaOfSight.transform.position
-                , areaOfSight.radius, playerLayer).GetComponentInParent<Transform>();
+        Collider2D playerCollider = Physics2D.OverlapCircle(areaOfSight.transform.position
+                , areaOfSight.radius, playerLayer);
 
-        attacking = player != null;
+        if (playerCollider != null)
+        {
+            player = playerCollider.GetComponentInParent<Transform>();
+            attacking = true;
+        }
+        else
+        {
+            attacking = false;
+        }
     }
 }
