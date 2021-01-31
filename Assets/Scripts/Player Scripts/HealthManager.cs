@@ -35,4 +35,9 @@ public class HealthManager : MonoBehaviour
     {
         return currentHealth;
     }
+
+    public void healPlayer(int health)
+    {
+        currentHealth += health;
+    }
 }
