@@ -21,7 +21,7 @@ public class BasicEnemyProjectile : EnemyProjectile
         if (other.gameObject.tag.Equals("Player")) 
         {
             Debug.Log("Going to do " + contactDmg + " dmg.");
-            //DO DMG TO PLAYER
+            other.GetComponentInParent<HealthManager>().damagePlayer(contactDmg);
         }
 
         DestroySelf();

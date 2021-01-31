@@ -22,7 +22,7 @@ public class RotatingTurret : MonoBehaviour
         {
             if (player != null) 
             {
-                transform.LookAt(player);
+                transform.right = player.position - transform.position;
             }
 
             reloadTimer -= Time.deltaTime;
