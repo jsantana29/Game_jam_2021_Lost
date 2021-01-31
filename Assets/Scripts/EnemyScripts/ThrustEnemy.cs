@@ -32,6 +32,7 @@ public class ThrustEnemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         lastDir = Vector2.one;
+        pauseTimer = pauseTime;
     }
 
     // Update is called once per frame
@@ -41,7 +42,7 @@ public class ThrustEnemy : MonoBehaviour
 
         if (patrolling && !thrusting)
         {
-            transform.LookAt(transform.position + (Vector3)lastDir);
+            //transform.LookAt(transform.position + (Vector3)lastDir);
 
             if (!dashing)
             {
