@@ -13,6 +13,7 @@ public class TurningScriptedMovement : MonoBehaviour
     void Start()
     {
         currentNode = 0;
+        UpdateRotation();
     }
 
     // Update is called once per frame
@@ -48,13 +49,20 @@ public class TurningScriptedMovement : MonoBehaviour
 
     private void UpdateNode()
     {
+        UpdateRotation();
+
         currentNode++;
 
         if (currentNode >= nodes.Count)
         {
             currentNode = 0;
         }
+    }
 
-        transform.rotation.eulerAngles.Set(transform.rotation.x, transform.rotation.y, nodes[currentNode].rotation.z);
+    private void UpdateRotation() 
+    {
+        Vector3 currentRotation = transform.eulerAngles;
+        currentRotation.z = nodes[currentNode].transform.eulerAngles.z;
+        transform.eulerAngles = currentRotation;
     }
 }

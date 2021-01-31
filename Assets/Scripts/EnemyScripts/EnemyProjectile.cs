@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class EnemyProjectile : MonoBehaviour
 {
-    [SerializeField] protected Vector2 initialDir;
-    [SerializeField] protected Vector2 speed;
+    protected Vector2 initialDir;
+    [SerializeField] protected float speed;
     [SerializeField] protected int contactDmg;
 
     public void SetDirection(Vector2 dir)

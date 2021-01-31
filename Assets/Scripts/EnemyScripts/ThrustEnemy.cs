@@ -5,7 +5,7 @@ using UnityEngine;
 public class ThrustEnemy : MonoBehaviour
 {
     [SerializeField] private int dashesTillThrust = 3;
-    [SerializeField] private int thrustDmg = 6;
+    [SerializeField] private int damage = 6;
     [SerializeField] private float pauseTime = 0.4f;
     [SerializeField] private float dashTime = 0.8f;
     [SerializeField] private float thrustTime = 0.6f;
@@ -32,6 +32,7 @@ public class ThrustEnemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         lastDir = Vector2.one;
+        pauseTimer = pauseTime;
     }
 
     // Update is called once per frame
@@ -41,7 +42,7 @@ public class ThrustEnemy : MonoBehaviour
 
         if (patrolling && !thrusting)
         {
-            transform.LookAt(transform.position + (Vector3)lastDir);
+            transform.right = lastDir;
 
             if (!dashing)
             {
@@ -77,7 +78,7 @@ public class ThrustEnemy : MonoBehaviour
         {
             if (!dashing && !thrusting)
             {
-                transform.LookAt(player);
+                transform.right = player.position - transform.position;
 
                 if (pauseTimer > 0.0f)
                 {
@@ -94,7 +95,7 @@ public class ThrustEnemy : MonoBehaviour
             }
             else if (!thrusting)
             {
-                transform.LookAt(player);
+                transform.right = player.position - transform.position;
 
                 if (dashTimer > 0.0f)
                 {
@@ -124,7 +125,7 @@ public class ThrustEnemy : MonoBehaviour
             {
                 if (initialThrustLook) 
                 {
-                    transform.LookAt(player);
+                    transform.right = player.position - transform.position;
                     initialThrustLook = false;
                 }
 
@@ -191,8 +192,8 @@ public class ThrustEnemy : MonoBehaviour
 
         if (playerCollider != null) 
         {
-            Debug.Log("DOING " + thrustDmg + "DMG TO PLAYER");
-            //DO DMG TO PLAYER
+            Debug.Log("DOING " + damage + "DMG TO PLAYER");
+            playerCollider.GetComponentInParent<HealthManager>().damagePlayer(damage);
         }
     }
 }
