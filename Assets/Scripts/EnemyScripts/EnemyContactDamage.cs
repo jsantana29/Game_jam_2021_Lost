@@ -11,7 +11,7 @@ public class EnemyContactDamage : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player")) 
         {
             Debug.Log("Doing " + contactDmg + " contact dmg");
-            //DO DMG TO PLAYER
+            collision.GetComponentInParent<HealthManager>().damagePlayer(contactDmg);
         }
     }
 }

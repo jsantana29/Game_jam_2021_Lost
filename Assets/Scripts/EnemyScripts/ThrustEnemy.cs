@@ -5,7 +5,7 @@ using UnityEngine;
 public class ThrustEnemy : MonoBehaviour
 {
     [SerializeField] private int dashesTillThrust = 3;
-    [SerializeField] private int thrustDmg = 6;
+    [SerializeField] private int damage = 6;
     [SerializeField] private float pauseTime = 0.4f;
     [SerializeField] private float dashTime = 0.8f;
     [SerializeField] private float thrustTime = 0.6f;
@@ -192,8 +192,8 @@ public class ThrustEnemy : MonoBehaviour
 
         if (playerCollider != null) 
         {
-            Debug.Log("DOING " + thrustDmg + "DMG TO PLAYER");
-            //DO DMG TO PLAYER
+            Debug.Log("DOING " + damage + "DMG TO PLAYER");
+            playerCollider.GetComponentInParent<HealthManager>().damagePlayer(damage);
         }
     }
 }
