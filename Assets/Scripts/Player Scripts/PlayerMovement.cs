@@ -11,12 +11,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rigid;
     private Vector2 movement;
     private Vector2 mousePos;
+    private Animator anim;
 
     public Camera cam;
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>(); 
         speed = 5f;
     }
 
@@ -27,6 +29,15 @@ public class PlayerMovement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        if(movement.x != 0 || movement.y != 0)
+        {
+            anim.SetBool("isMoving", true);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
+        }
 
     }
 
