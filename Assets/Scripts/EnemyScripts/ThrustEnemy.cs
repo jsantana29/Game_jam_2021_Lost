@@ -42,7 +42,7 @@ public class ThrustEnemy : MonoBehaviour
 
         if (patrolling && !thrusting)
         {
-            //transform.LookAt(transform.position + (Vector3)lastDir);
+            transform.right = lastDir;
 
             if (!dashing)
             {
@@ -78,7 +78,7 @@ public class ThrustEnemy : MonoBehaviour
         {
             if (!dashing && !thrusting)
             {
-                transform.LookAt(player);
+                transform.right = player.position - transform.position;
 
                 if (pauseTimer > 0.0f)
                 {
@@ -95,7 +95,7 @@ public class ThrustEnemy : MonoBehaviour
             }
             else if (!thrusting)
             {
-                transform.LookAt(player);
+                transform.right = player.position - transform.position;
 
                 if (dashTimer > 0.0f)
                 {
@@ -125,7 +125,7 @@ public class ThrustEnemy : MonoBehaviour
             {
                 if (initialThrustLook) 
                 {
-                    transform.LookAt(player);
+                    transform.right = player.position - transform.position;
                     initialThrustLook = false;
                 }
 

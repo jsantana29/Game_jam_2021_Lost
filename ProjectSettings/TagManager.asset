@@ -15,8 +15,8 @@ TagManager:
   - Walls
   - Enemy
   - EnemyHitbox
-  - 
-  - 
+  - EnemyBody
+  - EnemyProjectile
   - 
   - 
   - 

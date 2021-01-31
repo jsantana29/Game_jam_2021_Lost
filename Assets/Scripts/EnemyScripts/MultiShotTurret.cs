@@ -36,15 +36,20 @@ public class MultiShotTurret : MonoBehaviour
         {
             int projectileIndex = 0;
 
-            foreach (Transform firePoint in firePoints) 
+            for(int firePointIndex = 0; firePointIndex < firePoints.Count; firePointIndex++ ) 
             {
-                float projectileRotation = Mathf.Rad2Deg * (Mathf.Atan2(firePoint.position.y - transform.position.y
-                                                                  , firePoint.position.x - transform.position.x));
+                float projectileRotation = Mathf.Rad2Deg * (Mathf.Atan2(firePoints[firePointIndex].position.y - transform.position.y
+                                                                  , firePoints[firePointIndex].position.x - transform.position.x));
 
-                EnemyProjectile newProjectile = Instantiate(projectiles[projectileIndex], firePoint.position
+                EnemyProjectile newProjectile = Instantiate(projectiles[projectileIndex], firePoints[firePointIndex].position
                                                 , Quaternion.Euler(0.0f, 0.0f, projectileRotation)).GetComponent<EnemyProjectile>();
-                newProjectile.SetDirection((firePoint.position - transform.position).normalized);
+                newProjectile.SetDirection((firePoints[firePointIndex].position - transform.position).normalized);
                 projectileIndex++;
+
+                if (projectileIndex >= projectiles.Count) 
+                {
+                    projectileIndex = 0;
+                }
             }
 
             reloadTimer = attackRate;
