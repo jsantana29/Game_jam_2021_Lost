@@ -5,16 +5,31 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     public int currentHealth;
-    private const int MAX_HEALTH = 3;
+    private const int MAX_HEALTH = 30;
+    private bool iFrames;
+    private float currentTimer;
+    private const float MAX_IFRAMES = 1f;
     // Start is called before the first frame update
     void Start()
     {
+        iFrames = false;
         currentHealth = MAX_HEALTH;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (iFrames)
+        {
+            currentTimer += Time.deltaTime;
+
+            if(currentTimer >= MAX_IFRAMES)
+            {
+                currentTimer = 0;
+                iFrames = false;
+            }
+        }
+
         if(currentHealth <= 0)
         {
             currentHealth = 0;
@@ -23,7 +38,12 @@ public class HealthManager : MonoBehaviour
 
     public void damagePlayer(int damage)
     {
-        currentHealth -= damage;
+        if (!iFrames)
+        {
+            currentHealth -= damage;
+            iFrames = true;
+        }
+        
     }
 
     public void resetHealth()

@@ -24,6 +24,11 @@ public class BasicEnemyProjectile : EnemyProjectile
             other.GetComponentInParent<HealthManager>().damagePlayer(contactDmg);
         }
 
+        if(other.tag == "Walls")
+        {
+            Destroy(gameObject);
+        }
+
         DestroySelf();
     }
 }
