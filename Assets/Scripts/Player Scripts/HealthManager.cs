@@ -30,4 +30,9 @@ public class HealthManager : MonoBehaviour
     {
         currentHealth = MAX_HEALTH;
     }
+
+    public int getHealth()
+    {
+        return currentHealth;
+    }
 }
