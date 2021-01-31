@@ -6619,7 +6619,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.35305
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7533,6 +7533,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1683393423}
+    - target: {fileID: 9013013900091282118, guid: 0ade6ec142415ed4b9213333ae2a393b, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013013900091282118, guid: 0ade6ec142415ed4b9213333ae2a393b, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 9013013900091282119, guid: 0ade6ec142415ed4b9213333ae2a393b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7616,6 +7624,30 @@ PrefabInstance:
     - target: {fileID: 9013013900091282119, guid: 0ade6ec142415ed4b9213333ae2a393b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013013900091282137, guid: 0ade6ec142415ed4b9213333ae2a393b, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013013900091282137, guid: 0ade6ec142415ed4b9213333ae2a393b, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013013900091282137, guid: 0ade6ec142415ed4b9213333ae2a393b, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013013900091282137, guid: 0ade6ec142415ed4b9213333ae2a393b, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 2560
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013013900091282137, guid: 0ade6ec142415ed4b9213333ae2a393b, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1440
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013013900091282137, guid: 0ade6ec142415ed4b9213333ae2a393b, type: 3}
+      propertyPath: m_ReferencePixelsPerUnit
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 9013013900091282139, guid: 0ade6ec142415ed4b9213333ae2a393b, type: 3}
       propertyPath: m_Name
