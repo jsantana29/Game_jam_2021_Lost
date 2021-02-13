@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        //Moves player lol
+        Debug.Log("moving");
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
