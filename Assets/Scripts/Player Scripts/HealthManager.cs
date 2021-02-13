@@ -14,6 +14,7 @@ public class HealthManager : MonoBehaviour
     {
         iFrames = false;
         currentHealth = MAX_HEALTH;
+        Debug.Log("Helllooooooooooo!");
     }
 
     // Update is called once per frame
